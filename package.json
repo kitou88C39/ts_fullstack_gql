@@ -1,0 +1,20 @@
+{
+  "name": "ts_fullstack_gql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitou88C39/ts_fullstack_gql.git"
+  },
+  "keywords": [],
+  "author": "kitou88C39",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kitou88C39/ts_fullstack_gql/issues"
+  },
+  "homepage": "https://github.com/kitou88C39/ts_fullstack_gql#readme"
+}
