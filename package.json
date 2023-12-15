@@ -13,6 +13,9 @@
   "keywords": [],
   "author": "kitou88C39",
   "license": "ISC",
+  "workspaces": [
+    "packages/*"
+   ],
   "bugs": {
     "url": "https://github.com/kitou88C39/ts_fullstack_gql/issues"
   },
