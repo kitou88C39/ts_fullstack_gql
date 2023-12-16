@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "",
+    "build:back": "npm run build -w backend",
+    "build:front": "npm run build -w frontend",
+    "dev:back": "npm run dev -w backend",
+    "watch:back": "npm run watch -w backend",
     "dev:front": "npm run dev -w frontend"
   },
   "repository": {
@@ -15,9 +20,14 @@
   "license": "ISC",
   "workspaces": [
     "packages/*"
-   ],
+  ],
   "bugs": {
     "url": "https://github.com/kitou88C39/ts_fullstack_gql/issues"
   },
-  "homepage": "https://github.com/kitou88C39/ts_fullstack_gql#readme"
+  "homepage": "https://github.com/kitou88C39/ts_fullstack_gql#readme",
+  "devDependencies": {
+    "@types/node": "20.10.4",
+    "nodemon": "3.0.2",
+    "typescript": "5.3.3"
+  }
 }
