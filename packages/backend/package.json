@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "kitou88C39",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.10.4",
+    "nodemon": "3.0.2",
+    "typescript": "5.3.3"
+  }
 }
