@@ -13,11 +13,11 @@ module.exports = {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['.eslintrc.{ts,js}'],
       parserOptions: {
         sourceType: 'script',
         tsconfigRootDir: __dirname,
-        project: ['tsconfig.eslint.json'],
+        project: ['./tsconfig.eslint.json'],
       },
     },
   ],

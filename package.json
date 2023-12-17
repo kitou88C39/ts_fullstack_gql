@@ -27,6 +27,10 @@
   "homepage": "https://github.com/kitou88C39/ts_fullstack_gql#readme",
   "devDependencies": {
     "@types/node": "20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-react": "^7.33.2",
     "nodemon": "3.0.2",
     "typescript": "5.3.3"
   }
