@@ -1,9 +1,10 @@
 import { MyContext } from '../../../types/graphql.js';
 
 const resolvers = {
-  Query: {
-    health: async (_: any, args: any, context: MyContext, info: any) => {
-      return true;
+  Mutation: {
+    makeTodo: async (_: any, args: any, context: MyContext, info: any) => {
+      console.log({ args });
+      return 'todo has been created';
     },
   },
 };
