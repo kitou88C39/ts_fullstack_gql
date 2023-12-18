@@ -5,8 +5,12 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
-import { resolve } from 'path';
-import { error } from 'console';
+
+const typeDefs = `#graphql
+    type Query {
+    health: Boolean
+}
+`;
 
 type MyContext = {
   req: express.Request;
