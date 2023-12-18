@@ -31,8 +31,8 @@ async function main() {
 
   const httpSever = http.createServer(app);
   const server = new ApolloServer<MyContext>({
-    typeDefs: mergeTypeDefs([]),
-    resolvers: mergeResolvers([]),
+    typeDefs: mergeTypeDefs([typeDefs]),
+    resolvers: mergeResolvers([resolvers]),
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer: httpSever })],
   });
   await server.start();
