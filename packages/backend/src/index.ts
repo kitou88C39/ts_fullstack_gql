@@ -6,6 +6,7 @@ import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
 import { resolve } from 'path';
+import { error } from 'console';
 
 type MyContext = {
   req: express.Request;
@@ -35,3 +36,8 @@ async function main() {
   });
   console.log(`server is up and running at http://localhost:{PORT}`);
 }
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
