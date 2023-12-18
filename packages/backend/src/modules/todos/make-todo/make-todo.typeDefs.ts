@@ -1,5 +1,5 @@
 const typeDefs = `#graphql
 type Mutation {
-   makeTodo(title:String!):String!
+makeTodo(title:String!):String!
 }
 `;
