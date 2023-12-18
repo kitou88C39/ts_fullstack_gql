@@ -5,6 +5,7 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
+import { resolve } from 'path';
 
 type MyContext = {
   req: express.Request;
@@ -29,4 +30,8 @@ async function main() {
       context: async ({ req, res }) => ({ req, res }),
     })
   );
+  await new Promise<void>((resolve) => {
+    httpSever.listen({ port: PORT }, resolve);
+  });
+  console.log(`server is up and running at http://localhost:{PORT}`);
 }
