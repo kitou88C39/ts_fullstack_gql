@@ -12,6 +12,14 @@ const typeDefs = `#graphql
 }
 `;
 
+const resolvers = {
+  Query: {
+    health: async () => {
+      return true;
+    },
+  },
+};
+
 type MyContext = {
   req: express.Request;
   res: express.Response;
