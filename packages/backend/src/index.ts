@@ -16,5 +16,11 @@ async function main() {
   const app = express();
 
   const httpSever = http.createServer(app);
-  const server = new ApolloServer<MyContext>({});
+  const server = new ApolloServer<MyContext>({
+    typeDefs: mergeTypeDefs([]),
+    resolvers: mergeResolvers([]),
+    plugins: [ApolloServerPluginDrainHttpServer({ httpServer: httpSever })],
+  });
+  await server.start();
+  app.use(express.json());
 }
