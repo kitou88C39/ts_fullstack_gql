@@ -12,13 +12,13 @@ import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
 // }
 // `;
 
-const resolvers = {
-  Query: {
-    health: async (_: any, args: any, context: MyContext, info: any) => {
-      return true;
-    },
-  },
-};
+// const resolvers = {
+//   Query: {
+//     health: async (_: any, args: any, context: MyContext, info: any) => {
+//       return true;
+//     },
+//   },
+// };
 
 type MyContext = {
   req: express.Request;
