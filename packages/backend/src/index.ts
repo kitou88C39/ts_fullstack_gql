@@ -6,6 +6,8 @@ import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
 import { MyContext } from './types/graphql.js';
+import greetTypeDefs from './modules/root/greet/greet.typeDefs.js';
+import greetResolvers from './modules/root/greet/greet.resolversts.js';
 
 async function main() {
   const PORT = process.env.PORT || 5555;
@@ -13,8 +15,8 @@ async function main() {
 
   const httpSever = http.createServer(app);
   const server = new ApolloServer<MyContext>({
-    typeDefs: mergeTypeDefs([typeDefs]),
-    resolvers: mergeResolvers([resolvers]),
+    typeDefs: mergeTypeDefs([greetTypeDefs]),
+    resolvers: mergeResolvers([greetResolvers]),
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer: httpSever })],
   });
   await server.start();
