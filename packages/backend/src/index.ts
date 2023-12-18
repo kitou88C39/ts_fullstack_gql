@@ -5,6 +5,7 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
+import { MyContext } from './types/graphql.js';
 
 async function main() {
   const PORT = process.env.PORT || 5555;
