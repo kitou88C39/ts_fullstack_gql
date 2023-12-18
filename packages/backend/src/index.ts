@@ -23,4 +23,10 @@ async function main() {
   });
   await server.start();
   app.use(express.json());
+  app.use(
+    '/graphql',
+    expressMiddleware(server, {
+      context: async ({ req, res }) => ({ req, res }),
+    })
+  );
 }
