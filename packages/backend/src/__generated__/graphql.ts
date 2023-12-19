@@ -1,7 +1,7 @@
 import { GraphQLResolveInfo } from 'graphql';
 export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 
-// 型定義
 export type scalars = {
   ID: number;
   String: string;
@@ -10,15 +10,10 @@ export type scalars = {
   Float: number;
 };
 
-// クエリ
-const query = gql`
-  query {
-    users {
-      id
-      name
-    }
-  }
-`;
+export type Mutation = {
+  __typename?: 'Mutation';
+  maketodo: scalars['String'];
+};
 
 // リゾルバ
 const resolvers = {
