@@ -10,12 +10,12 @@ const typeDefs = `#graphql
         title: String!
 }
 
-type MutationTodoRespose {
+type MakeTodoRespose {
    todo:Todo!
 }
 
 type Mutation {
-   makeTodo(MakeTodoInput:MakeTodoInput!):String!
+   makeTodo(MakeTodoInput:MakeTodoInput!):MakeTodoRespose!
 }
 `;
 export default typeDefs;
