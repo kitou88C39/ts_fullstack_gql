@@ -7,6 +7,9 @@ export type Exact<T extends { [key: string]: unknown }> = {
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
   [SubKey in K]?: Maybe<T[SubKey]>;
 };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
 
 export type scalars = {
   ID: number;
