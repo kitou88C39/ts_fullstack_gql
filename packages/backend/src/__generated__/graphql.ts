@@ -27,23 +27,11 @@ export type Mutation = {
   maketodo: scalars['String'];
 };
 
-// リゾルバ
-const resolvers = {
-  Query: {
-    users: () => [
-      { id: 1, name: 'Alice' },
-      { id: 2, name: 'Bob' },
-    ],
-  },
+export type MutationMakeTodoArgs = {
+  title: scalars['String'];
 };
 
-// サーバーを起動
-const server = new ApolloServer({
-  typeDefs: query,
-  resolvers,
-  port: 4000,
-});
-
-server.listen().then(() => {
-  console.log('Server is running on http://localhost:4000');
-});
+export type Query = {
+  __typename?: 'Query';
+  greet?: Maybe<scalars['String']>;
+};
