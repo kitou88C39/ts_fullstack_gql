@@ -1,6 +1,7 @@
+import { Resolvers } from '../../../_generated_/graphql.js';
 import { MyContext } from '../../../types/graphql.js';
 
-const resolvers = {
+const resolvers: Resolvers<MyContext> = {
   Mutation: {
     makeTodo: async (
       _: any,
@@ -8,8 +9,10 @@ const resolvers = {
       context: MyContext,
       info: any
     ) => {
-      console.log({ args });
-      return 'todo has been created';
+      args.title;
+      context.req;
+
+      return 'todo has been created !';
     },
   },
 };
