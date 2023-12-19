@@ -35,3 +35,16 @@ export type Query = {
   __typename?: 'Query';
   greet?: Maybe<scalars['String']>;
 };
+
+export type ResolverFn<TResult, TParent, TContext, TArgs> = (
+  parent: TParent,
+  args: TArgs,
+  context: TContext,
+  info: GraphQLResolveInfo
+) => Promise<TResult> | TResult;
+
+export type ResolverTypeWrapper<T> = Promise<T> | T;
+
+export type ResolverWithResolve<TResult, TParent, TContext, Targs> = {
+  reslove: ResolverFn<TResult, TParent, TContext, Targs>;
+};
