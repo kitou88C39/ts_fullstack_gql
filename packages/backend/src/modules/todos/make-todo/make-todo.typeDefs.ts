@@ -3,6 +3,7 @@ const typeDefs = `#graphql
     id: String!
     title: String!
     updatedAt: String!
+    createdAt: String!
     }
 
     input MakeTodoInput {
@@ -10,9 +11,8 @@ const typeDefs = `#graphql
 }
 
 type MutationTodoRespose {
-   todo:String!
+   todo:Todo!
 }
-
 
 type Mutation {
    makeTodo(MakeTodoInput:MakeTodoInput!):String!
