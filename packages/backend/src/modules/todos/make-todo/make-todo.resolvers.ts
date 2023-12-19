@@ -9,7 +9,7 @@ const resolvers: Resolvers<MyContext> = {
       context: MyContext,
       info: any
     ) => {
-      args.title;
+      args.makeTodoInput;
       context.req;
 
       return 'todo has been created !';
