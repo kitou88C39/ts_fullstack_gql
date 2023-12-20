@@ -4,13 +4,7 @@ import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
-import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
 import { MyContext } from './types/graphql.js';
-import greetTypeDefs from './modules/root/greet/greet.typeDefs.js';
-import greetResolvers from './modules/root/greet/greet.resolversts.js';
-import makeTodoTypeDefs from './modules/todos/make-todo/make-todo.typeDefs.js';
-import makeTodoResolvers from './modules/todos/make-todo/make-todo.resolvers.js';
-import TodoTypeDefs from './modules/root/models/todo.typeDefs.js';
 import { buildSchema } from 'graphql';
 
 async function main() {
@@ -19,7 +13,7 @@ async function main() {
 
   const httpSever = http.createServer(app);
   const server = new ApolloServer<MyContext>({
-    schema:await buildSchema(),
+    schema: await buildSchema(),
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer: httpSever })],
   });
   await server.start();
