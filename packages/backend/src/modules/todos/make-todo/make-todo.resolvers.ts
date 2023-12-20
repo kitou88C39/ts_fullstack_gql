@@ -1,9 +1,8 @@
-import { title } from 'process';
 import { Resolvers } from '../../../_generated_/graphql.js';
 import { MyContext } from '../../../types/graphql.js';
 import crypto from 'crypto';
 
-const resolvers: Resolvers<MyContext> = {
+export const resolvers: Resolvers<MyContext> = {
   Mutation: {
     makeTodo: async (
       _: any,
@@ -18,9 +17,7 @@ const resolvers: Resolvers<MyContext> = {
         createdAt: new Date().toISOString(),
       };
 
-      return 'todo has been created !';
+      return { todo: todoItem };
     },
   },
 };
-
-export default resolvers;
