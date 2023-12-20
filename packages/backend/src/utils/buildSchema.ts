@@ -14,4 +14,5 @@ export const buildSchema = async () => {
   const resolvers = (await Promise.all(resolversPromises)).map(
     (fileItems) => fileItems.resolvers
   );
+  const pathToTypeDefs = path.join(pathToModules, '**', '*.graphql');
 };
