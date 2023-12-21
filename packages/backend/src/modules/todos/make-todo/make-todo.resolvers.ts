@@ -6,7 +6,7 @@ export const resolvers: Resolvers<MyContext> = {
   Mutation: {
     makeTodo: async (
       _: any,
-      args: { makeTodoInput },
+      { makeTodoInput }: { makeTodoInput: any },
       context: MyContext,
       info: any
     ) => {
