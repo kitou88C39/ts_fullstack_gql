@@ -15,14 +15,8 @@ export const resolvers: Resolvers<MyContext> = {
           title: makeTodoInput.title,
         },
       });
-      const todoItem = {
-        id: crypto.randomUUID(),
-        title: makeTodoInput.title,
-        updatedAt: new Date().toISOString(),
-        createdAt: new Date().toISOString(),
-      };
 
-      return { todo: todoItem };
+      return newTodo;
     },
   },
 };
