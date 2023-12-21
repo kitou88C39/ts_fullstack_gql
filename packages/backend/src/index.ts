@@ -4,13 +4,15 @@ import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
-import { PrismaClient, PrismaPromise } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { MyContext } from './types/graphql.js';
 import { buildSchema } from './utils/buildSchema.js';
 
-const PrismaPromise = new PrismaClient();
+const prismaClient = new PrismaClient();
 
 async function main() {
+  await prismaClient.$connect();
+
   const PORT = process.env.PORT || 5555;
   const app = express();
 
@@ -33,7 +35,8 @@ async function main() {
   console.log(`server is up and running at http://localhost:{PORT}`);
 }
 
-main().catch((error) => {
+main().catch(async (error) => {
   console.error(error);
+  await prismaClient.$disconnect();
   process.exit(1);
 });
