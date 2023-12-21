@@ -6,10 +6,15 @@ export const resolvers: Resolvers<MyContext> = {
   Mutation: {
     makeTodo: async (
       _: any,
-      { makeTodoInput }: { makeTodoInput: any },
-      context: MyContext,
+      { makeTodoInput },
+      { prismaClient },
       info: any
     ) => {
+      const newTodo = await prismaClient.todo.create({
+        date: {
+          title: makeTodoInput.title,
+        },
+      });
       const todoItem = {
         id: crypto.randomUUID(),
         title: makeTodoInput.title,
