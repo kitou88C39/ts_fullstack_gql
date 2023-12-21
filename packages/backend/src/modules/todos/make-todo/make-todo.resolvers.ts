@@ -4,19 +4,18 @@ import crypto from 'crypto';
 
 export const resolvers: Resolvers<MyContext> = {
   Mutation: {
-    makeTodo: async (
-      _: any,
-      { makeTodoInput },
-      { prismaClient },
-      info: any
-    ) => {
+    makeTodo: async (_, { makeTodoInput }, { prismaClient }, info) => {
       const newTodo = await prismaClient.todo.create({
         date: {
           title: makeTodoInput.title,
         },
       });
-
-      return newTodo;
+      newTodo.createdAt;
+      return {
+        ...newTodo,
+        updatedAt: newTodo.updatedAt.toISOString(),
+        createdAt: newTodo.createdAt.toISOString(),
+      };
     },
   },
 };
