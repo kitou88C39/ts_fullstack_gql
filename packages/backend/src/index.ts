@@ -4,9 +4,11 @@ import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
-import { PrismaPromise } from '@prisma/client';
+import { PrismaClient, PrismaPromise } from '@prisma/client';
 import { MyContext } from './types/graphql.js';
 import { buildSchema } from './utils/buildSchema.js';
+
+const PrismaPromise = new PrismaClient();
 
 async function main() {
   const PORT = process.env.PORT || 5555;
