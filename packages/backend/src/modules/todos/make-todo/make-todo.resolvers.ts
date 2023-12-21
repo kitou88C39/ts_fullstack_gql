@@ -1,6 +1,6 @@
+import crypto from 'crypto';
 import { Resolvers } from '../../../_generated_/graphql.js';
 import { MyContext } from '../../../types/graphql.js';
-import crypto from 'crypto';
 
 export const resolvers: Resolvers<MyContext> = {
   Mutation: {
@@ -10,11 +10,12 @@ export const resolvers: Resolvers<MyContext> = {
           title: makeTodoInput.title,
         },
       });
-      newTodo.createdAt;
       return {
-        ...newTodo,
-        updatedAt: newTodo.updatedAt.toISOString(),
-        createdAt: newTodo.createdAt.toISOString(),
+        todo: {
+          ...newTodo,
+          updatedAt: newTodo.updatedAt.toISOString(),
+          createdAt: newTodo.createdAt.toISOString(),
+        },
       };
     },
   },
