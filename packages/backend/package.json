@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon dist/index.js",
-    "watch": "tsc --watch",
+    "watch": "npm run cpgql && tsc --watch",
     "build": "tsc",
     "start": "node dist/index.js",
     "gen": "graphql-codegen --config codegen.yml",
