@@ -1,3 +1,4 @@
+import { GraphQLError } from 'graphql';
 import { Resolvers } from '../../../_generated_/graphql.js';
 import { MyContext } from '../../../types/graphql.js';
 
@@ -10,13 +11,20 @@ export const resolvers: Resolvers<MyContext> = {
         },
       });
       if (!existingTodo) {
-        return;
+        throw new GraphQLError('Not found');
       }
       await prismaClient.todo.delete({
         where: {
           id: existingTodo.id,
         },
       });
+      return {
+        todo: {
+          ...existingTodo,
+          updatedAt: existingTodo.updatedAt.toISOString(),
+          createdAt: existingTodo.createdAt.toISOString(),
+        },
+      };
     },
   },
 };
