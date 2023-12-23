@@ -1,6 +1,7 @@
 import { GraphQLError } from 'graphql';
 import { Resolvers } from '../../../_generated_/graphql.js';
 import { MyContext } from '../../../types/graphql.js';
+import { title } from 'process';
 
 export const resolvers: Resolvers<MyContext> = {
   Mutation: {
@@ -21,6 +22,16 @@ export const resolvers: Resolvers<MyContext> = {
       if (typeof updateTodoInput.isCompleted === 'boolean') {
         existingTodo.isCompleted = updateTodoInput.isCompleted;
       }
+
+      await prismaClient.todo.update({
+        where: {
+          id: existingTodo.id,
+        },
+        date: {
+          title: existingTodo.title,
+          isCompleted: existingTodo.isCompleted,
+        },
+      });
 
       return {
         todo: {
