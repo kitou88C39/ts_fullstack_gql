@@ -7,5 +7,5 @@ type RemoveTodoResponse {
 }
 
 type Mutation {
-    RemoveTodo(removeTodoInput: RemoveTodoInput)
+  RemoveTodo(removeTodoInput: RemoveTodoInput!): RemoveTodoResponse!
 }
