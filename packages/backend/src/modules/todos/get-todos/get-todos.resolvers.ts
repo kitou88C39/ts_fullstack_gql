@@ -4,8 +4,10 @@ import { MyContext } from '../../../types/graphql.js';
 export const resolvers: Resolvers<MyContext> = {
     Query:{
         getTodos: async
-        (_, args, context, info) => {
-
-        }
-    }
+        (_, args, {PrismaClient}, info) => {
+        return {
+            todos:[],
+        };
+    },
+  },
 };
