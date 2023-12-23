@@ -1,4 +1,5 @@
 input UpdateTodoInput {
+  todoId: String!
   title: String
   isCompleted: Boolean
 }
