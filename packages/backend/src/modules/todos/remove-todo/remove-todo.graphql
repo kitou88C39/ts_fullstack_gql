@@ -1,3 +1,11 @@
 input RemoveTodoInput {
   todoId: string!
 }
+
+type RemoveTodoResponse {
+  todo: Todo!
+}
+
+type Mutation {
+    RemoveTodo(removeTodoInput: RemoveTodoInput)
+}
