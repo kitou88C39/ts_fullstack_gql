@@ -18,6 +18,10 @@ export const resolvers: Resolvers<MyContext> = {
         existingTodo.title = updateTodoInput.title;
       }
 
+      if (typeof updateTodoInput.isCompleted === 'boolean') {
+        existingTodo.isCompleted = updateTodoInput.isCompleted;
+      }
+
       return {
         todo: {
           ...existingTodo,
