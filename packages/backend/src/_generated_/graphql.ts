@@ -36,7 +36,7 @@ export type Query = {
   greet?: Maybe<scalars['String']>;
 };
 
-export type ResolverFn<TResult, TParent, TContext, TArgs> = (
+export type Resolvers<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
@@ -46,5 +46,5 @@ export type ResolverFn<TResult, TParent, TContext, TArgs> = (
 export type ResolverTypeWrapper<T> = Promise<T> | T;
 
 export type ResolverWithResolve<TResult, TParent, TContext, Targs> = {
-  reslove: ResolverFn<TResult, TParent, TContext, Targs>;
+  reslove: Resolvers<TResult, TParent, TContext, Targs>;
 };
