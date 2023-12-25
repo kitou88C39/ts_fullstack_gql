@@ -10,7 +10,11 @@ export const resolvers: Resolvers = {
       console.log({ value });
       return value;
     },
-    parseValue(value) {},
+    parseValue(value) {
+      console.log('parseValue');
+      console.log({ value });
+      return new Date();
+    },
     parseLiteral(ast) {},
   }),
 };
