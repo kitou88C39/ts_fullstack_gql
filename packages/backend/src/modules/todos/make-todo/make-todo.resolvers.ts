@@ -7,7 +7,7 @@ export const resolvers: Resolvers<MyContext> = {
       //console.log(`hello: ${makeTodoInput}`);
       const newTodo = await prismaClient.todo.create({
         date: {
-          title: '',
+          title: makeTodoInput.title,
         },
       });
       return {
