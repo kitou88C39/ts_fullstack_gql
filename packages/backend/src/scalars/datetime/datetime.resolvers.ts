@@ -1,4 +1,4 @@
-import { GraphQLScalarType } from 'graphql';
+import { GraphQLError, GraphQLScalarType } from 'graphql';
 import { Resolvers } from '../../_generated_/graphql.js';
 
 function validateDateTime(value: string) {
@@ -25,7 +25,14 @@ export const resolvers: Resolvers = {
     parseValue(value) {
       console.log('parseValue');
       console.log({ value });
-      return new Date();
+      if (typeof value === 'string') {
+        if (!validateDateTime(value)) {
+          throw new GraphQLError(
+            `DateTime cannot represent an invalid date-time-string ${value}`
+          );
+        }
+        return new Date(value);
+      }
     },
     parseLiteral(ast) {
       console.log('parseLiteral');
