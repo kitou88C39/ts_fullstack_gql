@@ -1,11 +1,11 @@
 input MakeTodoInput {
-        title: String!
+  title: String!
 }
 
 type MakeTodoRespose {
-   todo:Todo!
+  todo: Todo!
 }
 
 type Mutation {
-   makeTodo(MakeTodoInput:MakeTodoInput!):MakeTodoRespose!
+  makeTodo(MakeTodoInput: Datetime!): MakeTodoRespose!
 }
