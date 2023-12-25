@@ -4,20 +4,10 @@ import { MyContext } from '../../../types/graphql.js';
 export const resolvers: Resolvers<MyContext> = {
   Query: {
     getTodo: async (_, { getTodoInput }, { prismaClient }, info) => {
-      const existingTodo = await prismaClient.todo.findUnique({
-        where: {
-          id: getTodoInput.todoId,
-        },
-      });
-      if (!existingTodo) {
-        throw new GraphQLError('Not found');
-      }
+      const todos = await prismaClient.todo.findMany();
+
       return {
-        todos: {
-          ...existingTodo,
-          updatedAt: existingTodo.updatedAt,
-          createdAt: existingTodo.createdAt,
-        },
+        todos,
       };
     },
   },
