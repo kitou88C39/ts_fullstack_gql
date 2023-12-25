@@ -46,6 +46,12 @@ export const resolvers: Resolvers = {
         throw new GraphQLError(
           `DateTime cannot represent an invalid date-time-string ${value.toString}`
         );
+
+      if (!validateDateTime(value)) {
+        throw new GraphQLError(
+          `DateTime cannot represent an invalid date-time-string ${value.toString}`
+        );
+      }
       return new Date();
     },
   }),
