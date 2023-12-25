@@ -7,5 +7,5 @@ type MakeTodoRespose {
 }
 
 type Mutation {
-  makeTodo(MakeTodoInput: Datetime!): MakeTodoRespose!
+  makeTodo(MakeTodoInput: MakeTodoInput!): MakeTodoRespose!
 }
