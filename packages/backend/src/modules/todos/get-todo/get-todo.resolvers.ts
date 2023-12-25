@@ -15,8 +15,8 @@ export const resolvers: Resolvers<MyContext> = {
       return {
         todos: {
           ...existingTodo,
-          updatedAt: existingTodo.updatedAt.toISOString(),
-          createdAt: existingTodo.createdAt.toISOString(),
+          updatedAt: existingTodo.updatedAt,
+          createdAt: existingTodo.createdAt,
         },
       };
     },

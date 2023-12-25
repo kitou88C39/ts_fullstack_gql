@@ -5,7 +5,7 @@ import { MyContext } from '../../../types/graphql.js';
 export const resolvers: Resolvers<MyContext> = {
   Mutation: {
     makeTodo: async (_, { makeTodoInput }, { prismaClient }, info) => {
-      console.log(`hello: ${makeTodoInput}`);
+      //console.log(`hello: ${makeTodoInput}`);
       const newTodo = await prismaClient.todo.create({
         date: {
           title: makeTodoInput.title,
