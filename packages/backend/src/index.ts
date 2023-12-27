@@ -24,7 +24,11 @@ async function main() {
   });
   await server.start();
 
-  app.use(cors());
+  app.use(
+    cors({
+      origin: 'http://localhost:5173',
+    })
+  );
 
   app.use(express.json());
   app.use(
