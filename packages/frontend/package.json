@@ -9,12 +9,14 @@
     "watch": "tsc --watch",
     "build": "tsc",
     "start": "node dist/index.js",
-    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\""
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "gen": "graphql-codegen --config codegen.yml"
   },
   "keywords": [],
   "author": "kitou88C39",
   "license": "ISC",
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
     "@types/glob": "8.1.0",
     "@types/node": "20.10.4",
     "@types/react": "^18.2.45",
@@ -24,7 +26,8 @@
     "copyfiles": "2.4.1",
     "eslint": "8.56.0",
     "nodemon": "3.0.2",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "@graphql-codegen/client-preset": "4.1.0"
   },
   "dependencies": {
     "@apollo/client": "3.8.8",
