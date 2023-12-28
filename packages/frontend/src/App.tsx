@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useQuery } from 'react';
 
 const getTodoQuery = gql`
   query Todos {
@@ -15,9 +15,7 @@ const getTodoQuery = gql`
 `;
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div class='App'></div>;
+  return <div className='App'></div>;
 }
 
 export default App;
