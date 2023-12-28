@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
+import React from 'react';
 import { useTodosQuery } from './_generated_/graphql';
 
 function App() {
