@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
+import { useTodosQuery } from './_generated_/graphql';
 
 function App() {
-  const { data, loading, error } = useGetTodosQuery();
+  const { data, loading, error } = useTodosQuery();
 
   return (
     <div className='App'>
