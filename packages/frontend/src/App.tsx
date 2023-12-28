@@ -7,7 +7,7 @@ function App() {
     <div className='App'>
       <div>
         {data?.getTodos?.todos?.map((item: any) => (
-          <p key={item.id}>{item.title}</p>
+          <p key={item?.id}>{item?.title}</p>
         ))}
       </div>
     </div>
