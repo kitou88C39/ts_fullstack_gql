@@ -1,0 +1,13 @@
+const getTodoQuery = gql`
+  query Todos {
+    getTodos {
+      todos {
+        id
+        title
+        isCompleted
+        createAt
+        updateAt
+      }
+    }
+  }
+`;
