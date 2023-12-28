@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTodosQuery } from './_generated_/graphql';
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
   return (
     <div className='App'>
       <div>
-        {data?.getTodos?.todos.map((item: any) => (
+        {data?.getTodos?.todos?.map((item: any) => (
           <p key={item.id}>{item.title}</p>
         ))}
       </div>
