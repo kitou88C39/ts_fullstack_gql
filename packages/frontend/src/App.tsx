@@ -1,22 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
 import React, { useState } from 'react';
-
-const getTodoQuery = gql`
-  query Todos {
-    getTodos {
-      todos {
-        id
-        title
-        isCompleted
-        createAt
-        updateAt
-      }
-    }
-  }
-`;
+import { useQuery } from '@apollo/client';
 
 function App() {
-  const { data, loading, error } = useQuery(getTodoQuery);
+  const { data, loading, error } = useGetTodosQuery();
 
   return (
     <div className='App'>
