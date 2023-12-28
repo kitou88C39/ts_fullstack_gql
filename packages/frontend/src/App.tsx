@@ -1,4 +1,5 @@
-import React, { useState, useQuery } from 'react';
+import { gql, useQuery } from '@apollo/client';
+import React, { useState } from 'react';
 
 const getTodoQuery = gql`
   query Todos {
